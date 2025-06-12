@@ -53,3 +53,11 @@ env: JNIEnv是不需要增加mut关键字的，而在0.21.1中是需要mut env: 
 
 0.21.1版本如下所示  
 ![0.21.1版本](img/0211.png)  
+
+在发布生产版本时，请注意将profile改为release，此时编译的文件会去除符号。大小约在360kb。
+```groovy
+cargo {
+    profile = "release" // Or "debug" if you want to debug your Rust code
+}
+```
+![release_remove_symbol](img/release.png)  

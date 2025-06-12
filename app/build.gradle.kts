@@ -45,6 +45,7 @@ cargo {
     module = "../rust"       // Or whatever directory contains your Cargo.toml
     libname = "rust"          // Or whatever matches Cargo.toml's [package] name.
     targets = listOf("arm", "arm64", "x86")  // See bellow for a longer list of options
+    profile = "release" // Or "debug" if you want to debug your Rust code
 }
 
 tasks.matching { it.name.matches(Regex("merge.*JniLibFolders")) }.configureEach {
